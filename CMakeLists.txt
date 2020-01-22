@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.2)
 set(CMAKE_CXX_STANDARD 17)
 string(APPEND CMAKE_CXX_FLAGS "-pthread" )
 
-include("tools/hunter/HunterGate.cmake")
+include("tools/gate/cmake/HunterGate.cmake")
 
 HunterGate(
     URL "https://github.com/cpp-pm/hunter/archive/v0.23.244.tar.gz"
@@ -29,12 +29,6 @@ add_executable(main ${CMAKE_CURRENT_SOURCE_DIR}/sources/source.cpp)
 target_include_directories(main PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/includes/)
 target_link_libraries(main core)
 
-add_executable(utility_test ${CMAKE_CURRENT_SOURCE_DIR}/tests/utility_test.cpp)
-target_include_directories(utility_test PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/includes/)
-target_link_libraries(utility_test utility GTest::Main)
-
-
-
-
-
-
+#add_executable(utility_test ${CMAKE_CURRENT_SOURCE_DIR}/tests/utility_test.cpp)
+#target_include_directories(utility_test PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/includes/)
+#target_link_libraries(utility_test utility GTest::Main)
